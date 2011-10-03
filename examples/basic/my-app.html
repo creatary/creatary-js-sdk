@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/creatary.js"></script>
+        <script style="text/javascript">
+            $(document).ready(function() {
+                
+                Creatary.init('zdjr7ogdlsdb4ym1', {
+                    // Authorized callback
+                    callback: function(code) {
+                        $('#result').html('Thanks for enabling my app!');
+                        $.post('ajax.php?code_arrived=1', { code: code });
+                    },
+                     // Rejected callback
+                    error_callback: function() {
+                        $('#result').html('You will not be able to use my app. Are you sure?');
+                    },
+                    loglevel: Creatary.log.DEBUG
+                });
+                
+                // Popup authorization flow
+                $('#auth').click( Creatary.auth );
+
+            });
+        </script>
+        <style type="text/css">
+            body {
+                background: #eee;
+                font-family: Verdana;
+                color: #888;
+                text-shadow: #fff 1px 1px;
+            }
+            body > div {
+                width: 1100px;
+                margin: auto;
+                text-align: center;
+            }
+            body > div > span {
+                width: 550px;
+                float: left;
+                text-align: left;
+            }
+            h3 > span {
+                font-size: 150%;
+                position: relative;
+                top: 3px;
+                color: #555;
+            }
+            #creatary-root {
+                width: 500px;
+                height: 220px;
+                border: 1px #888 solid;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: #fff;
+            }
+            #result {
+                font-size: 130%;
+                color: #f55;
+            }
+            input[type=button] {
+                margin: 30px 0px 0px 100px;
+                border: 1px solid #555;
+                border-radius: 5px;
+                background-color: #ccc;
+                font-size: 120%;
+                cursor: pointer;
+            }
+            input[type=button]:hover {
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>My Fantastic App</h1>
+            <p>Demonstrating how easily your users can enable your application.</p>
+            <p id="result"></p>
+            <span>
+                <h3><span>1.</span> Inline iFrame Authorization Flow</h3>
+                <div id="creatary-root"></div>
+            </span>
+            <span>
+                <h3><span>2.</span> PopUp Authorization Flow</h3>
+                <input type="button" value="Enable my Application" id="auth" />
+            </span>
+        </div>
+
+    </body>
+</html>
