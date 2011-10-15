@@ -5,17 +5,18 @@
         <script style="text/javascript">
             $(document).ready(function() {
                 
-                Creatary.init('zdjr7ogdlsdb4ym1', {
+                Creatary.init('client_id', {
+                    renderIframe : true,
                     // Authorized callback
-                    callback: function(code) {
+                    callback : function(code) {
                         $('#result').html('Thanks for enabling my app!');
                         $.post('ajax.php?code_arrived=1', { code: code });
                     },
                      // Rejected callback
-                    error_callback: function() {
+                    error_callback : function() {
                         $('#result').html('You will not be able to use my app. Are you sure?');
                     },
-                    loglevel: Creatary.log.DEBUG
+                    loglevel : Creatary.log.DEBUG
                 });
                 
                 // Popup authorization flow
