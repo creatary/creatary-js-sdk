@@ -8,9 +8,18 @@ http://creatary.com
 
 # How to use
 
-You need to put the following HTML snippets somewhere in your document `<body>` (preferably in the beginning).
+You need to put the following HTML snippets somewhere in your document `<body>`. If you use
+the iframe in-page authorization (renderIframe: true), the iframe will be rendered in the
+creatary-root div element. You should set the div size to 500px x 220px, for example like:
 
-If you want to use the iFrame authorization flow:
+```css
+#creatary-root {
+    width: 500px;
+    height: 220px;
+}
+```
+
+If you want to use the iFrame in-page authorization flow:
 
 ```html
 <div id="creatary-root"></div>
@@ -32,11 +41,10 @@ If you want to use the iFrame authorization flow:
   };
   
   (function(){
-     var js = document.createElement('script');
-     js.async = true;
+     var js = document.createElement('script'); js.async = true;
      js.src = "//telcoassetmarketplace.com/web/lib/creatary.js";
      document.getElementsByTagName('head')[0].appendChild(js);
-  )();
+  })();
 </script>
 ```
 
@@ -63,10 +71,9 @@ If you want to use the popup authorization flow:
   };
   
   (function(){
-     var js = document.createElement('script');
-     js.async = true;
+     var js = document.createElement('script'); js.async = true;
      js.src = "//telcoassetmarketplace.com/web/lib/creatary.js";
      document.getElementsByTagName('head')[0].appendChild(js);
-  )();
+  })();
 </script>
 ```
