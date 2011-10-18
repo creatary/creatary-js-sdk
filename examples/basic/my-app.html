@@ -1,28 +1,6 @@
 <html>
     <head>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../../lib/creatary.js"></script>
-        <script style="text/javascript">
-            $(document).ready(function() {
-                
-                Creatary.init('zdjr7ogdlsdb4ym1', {
-                    // Authorized callback
-                    callback: function(code) {
-                        $('#result').html('Thanks for enabling my app!');
-                        $.post('ajax.php?code_arrived=1', { code: code });
-                    },
-                     // Rejected callback
-                    error_callback: function() {
-                        $('#result').html('You will not be able to use my app. Are you sure?');
-                    },
-                    loglevel: Creatary.log.DEBUG
-                });
-                
-                // Popup authorization flow
-                $('#auth').click( Creatary.auth );
-
-            });
-        </script>
         <style type="text/css">
             body {
                 background: #eee;
@@ -79,6 +57,34 @@
             <span>
                 <h3><span>1.</span> Inline iFrame Authorization Flow</h3>
                 <div id="creatary-root"></div>
+                <script style="text/javascript">
+                    var creataryAsyncInit = function() {
+                        Creatary.init('client_id', {
+                            // Use the iFrame in-page authorization
+                            renderIframe : true,
+                            // Authorized callback
+                            callback : function(code) {
+                                $('#result').html('Thanks for enabling my app!');
+                                $.post('ajax.php?code_arrived=1', { code: code });
+                            },
+                             // Rejected callback
+                            error_callback : function() {
+                                $('#result').html('You will not be able to use my app. Are you sure?');
+                            },
+                            // Verbose logging
+                            loglevel : Creatary.log.DEBUG
+                        });
+
+                        // Popup authorization flow
+                        $('#auth').click( Creatary.auth );
+                    };
+
+                    (function(){
+                         var s = document.createElement('script'); s.async = true;
+                         s.src = "//telcoassetmarketplace.com/web/lib/creatary.js";
+                         document.getElementsByTagName('head')[0].appendChild(s);
+                    })();
+                </script>
             </span>
             <span>
                 <h3><span>2.</span> PopUp Authorization Flow</h3>
