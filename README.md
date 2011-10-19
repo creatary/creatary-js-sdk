@@ -28,6 +28,10 @@ If you want to use the iFrame in-page authorization flow:
     Creatary.init('client_id', {
         // Use the iFrame in-page authorization
         renderIframe : true,
+        // Login with pincode via sms
+        login_method: 'sms',
+        // The preset number for login method with sms
+        pre_set_msisdn: '18008291040',
         // Authorized callback
         callback : function(code) {
             $('#result').html('Thanks for enabling my app!');
