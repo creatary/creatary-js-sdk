@@ -46,7 +46,7 @@ If you want to use the iFrame in-page authorization flow:
   
   (function(){
      var js = document.createElement('script'); js.async = true;
-     js.src = "//telcoassetmarketplace.com/web/lib/creatary.js";
+     js.src = "//telcoassetmarketplace.com/static/lib/creatary.js";
      document.getElementsByTagName('head')[0].appendChild(js);
   })();
 </script>
@@ -76,7 +76,7 @@ If you want to use the popup authorization flow:
   
   (function(){
      var js = document.createElement('script'); js.async = true;
-     js.src = "//telcoassetmarketplace.com/web/lib/creatary.js";
+     js.src = "//telcoassetmarketplace.com/static/lib/creatary.js";
      document.getElementsByTagName('head')[0].appendChild(js);
   })();
 </script>
