@@ -7,4 +7,4 @@ can connect their application to hte platform: the iFrame and popup based OAuth2
 
 For lifelike examples, see
 
-* https://github.com/tamdeveloper/creatary-node.js/tree/master/examples/rss-2-sms
+* https://github.com/creatary/creatary-node.js-sdk/tree/master/examples/rss-2-sms

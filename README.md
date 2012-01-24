@@ -1,4 +1,4 @@
-# creatary-js
+# creatary-js-sdk
 
 A Javascript SDK that provides a simple API to connect your web application with the Creatary platform.
 
