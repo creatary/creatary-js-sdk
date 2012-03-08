@@ -81,3 +81,7 @@ If you want to use the popup authorization flow:
   })();
 </script>
 ```
+
+# Documentation
+
+More details in wiki https://github.com/creatary/creatary-js-sdk/wiki
